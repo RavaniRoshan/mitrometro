@@ -1,38 +1,248 @@
 @import "tailwindcss";
 
+/* ---------------------------------------------------------------------------
+   MetroResolve design system — reskinned to the tines.com visual language.
+   Warm cream canvas, purple as the headline + brand color, deep-purple pill
+   buttons, mono uppercase eyebrows, and a sans/serif mix.
+   Tokens were extracted from the live tines.com DOM (display-p3 → sRGB).
+   No remote fonts — system stacks only, including Gujarati/Devanagari faces.
+--------------------------------------------------------------------------- */
+
 @theme {
-  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
-  --color-tines-purple: #5423E7;
-  --color-tines-dark: #200E4A;
-  --color-tines-cream: #FAF8F5;
+  --font-sans:
+    ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, "Noto Sans", "Noto Sans Gujarati", "Nirmala UI", "Noto Sans Devanagari",
+    sans-serif;
+  /* Tines pairs Roobert (sans) with Reckless (serif). Georgia stands in. */
+  --font-serif: Georgia, "Times New Roman", "Noto Serif", "Noto Serif Gujarati", serif;
+  --font-mono:
+    ui-monospace, "Cascadia Mono", "Segoe UI Mono", "Roboto Mono", Menlo, Consolas,
+    monospace;
+
+  /* Surfaces */
+  --color-paper: #fcf9f5;   /* Tines cream */
+  --color-card: #ffffff;
+  --color-ink: #101010;     /* Tines near-black */
+  --color-ink-2: #1c1330;
+  --color-ink-3: #2a1b4f;
+
+  /* Text — contrast-checked against #fcf9f5 cream (WCAG AA 4.5:1) */
+  --color-muted: #4a4558;   /* 8.8:1 */
+  --color-faint: #6b6678;   /* 5.3:1 */
+  --color-on-ink: #fcf9f5;
+  --color-on-ink-muted: #b9b3cc;
+
+  /* Lines */
+  --color-line: #e9e3d9;
+  --color-line-2: #d6cec1;
+  --color-line-ink: #3a2f5c;
+
+  /* Brand — Tines purple */
+  --color-signal: #714bd0;
+  --color-signal-deep: #542f9c;
+  --color-signal-soft: #ece8fd;  /* lavender */
+  --color-brand-card: #6741bf;   /* filled feature cards */
+  --color-signal-lit: #a382ea;   /* purple, legible on dark surfaces */
+
+  /* Secondary accents — text variants darkened to clear AA on their own tints */
+  --color-teal: #007471;        /* 4.7:1 on #d8efee, 5.6:1 on white */
+  --color-teal-soft: #d8efee;
+  --color-teal-lit: #86e4df;    /* 4.6:1 on #6741bf, 12.9:1 on ink */
+  --color-ochre: #a34500;       /* 5.2:1 on #fbe9dc */
+  --color-ochre-soft: #fbe9dc;
+  --color-ochre-lit: #e8873f;
+  --color-green: #007f4a;        /* saved / success */
+  --color-green-soft: #d9efdf;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 4.5rem;
 }
 
 body {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
   font-family: var(--font-sans);
-  background-color: #FAF8F5;
-  color: #200E4A;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
 }
 
-.font-mono {
+/* Remove double-tap zoom delay on touch; keep pinch zoom intact */
+html {
+  -webkit-tap-highlight-color: transparent;
+}
+@media (pointer: coarse) {
+  a,
+  button,
+  [role='button'],
+  input,
+  select,
+  textarea,
+  label {
+    touch-action: manipulation;
+  }
+}
+
+/* Skip link — visible only on keyboard focus */
+.skip-link {
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 100;
+  transform: translateY(-200%);
+  border-radius: 990px;
+  background: var(--color-signal-deep);
+  color: var(--color-on-ink);
+  padding: 0.6rem 1.1rem;
   font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  transition: transform 0.15s ease;
+}
+.skip-link:focus-visible {
+  transform: translateY(0);
 }
 
-/* Custom scrollbars */
-::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
+::selection {
+  background: color-mix(in srgb, var(--color-signal) 22%, transparent);
+  color: var(--color-ink);
 }
 
-::-webkit-scrollbar-track {
-  background: #F1EDF8;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #D4C7EC;
+/* Visible, consistent keyboard focus everywhere */
+:focus-visible {
+  outline: 2px solid var(--color-signal-deep);
+  outline-offset: 2px;
   border-radius: 3px;
 }
 
+/* Warm scrollbars, matching the cream canvas */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #f1ece3;
+}
+::-webkit-scrollbar-thumb {
+  background: #d6cec1;
+  border-radius: 5px;
+  border: 2px solid #f1ece3;
+}
 ::-webkit-scrollbar-thumb:hover {
-  background: #B6A2E0;
+  background: #bfb5a4;
+}
+
+/* --- Type scale (Tines: large, light-weight, tightly tracked) ------------ */
+
+/* Oversized display headline — weight 400, not bold, like tines.com */
+.display {
+  font-size: clamp(2.4rem, 6vw, 4rem);
+  line-height: 1.04;
+  letter-spacing: -0.03em;
+  font-weight: 400;
+}
+
+/* Serif display — stands in for Tines' Reckless headings */
+.display-serif {
+  font-family: var(--font-serif);
+  font-size: clamp(2.1rem, 4.6vw, 3.25rem);
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  font-weight: 400;
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+/* Uppercase mono eyebrow, like Tines' section labels */
+.plate {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+/* --- Decorative fields --------------------------------------------------- */
+
+/* Jali lattice, re-tinted to the Tines purple */
+.jali {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='44' height='44' viewBox='0 0 44 44'%3E%3Cg fill='none' stroke='%23714BD0' stroke-opacity='0.13' stroke-width='1'%3E%3Cpath d='M0 22 L22 0 L44 22 L22 44 Z'/%3E%3Cpath d='M11 22 L22 11 L33 22 L22 33 Z'/%3E%3Cpath d='M22 0 L22 11 M22 33 L22 44 M0 22 L11 22 M33 22 L44 22'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 44px 44px;
+}
+
+.jali-ink {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='44' height='44' viewBox='0 0 44 44'%3E%3Cg fill='none' stroke='%23FCF9F5' stroke-opacity='0.10' stroke-width='1'%3E%3Cpath d='M0 22 L22 0 L44 22 L22 44 Z'/%3E%3Cpath d='M11 22 L22 11 L33 22 L22 33 Z'/%3E%3Cpath d='M22 0 L22 11 M22 33 L22 44 M0 22 L11 22 M33 22 L44 22'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 44px 44px;
+}
+
+/* Dispatch-board dot field */
+.dots {
+  background-image: radial-gradient(color-mix(in srgb, var(--color-signal) 18%, transparent) 1px, transparent 1px);
+  background-size: 14px 14px;
+}
+
+/* --- Motion: purposeful, restrained, reduced-motion aware ---------------- */
+
+@keyframes route-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes soft-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.35;
+  }
+}
+
+.anim-route {
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: route-draw 2.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.anim-fade-up {
+  animation: fade-up 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.anim-pulse-soft {
+  animation: soft-pulse 2.4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .anim-route {
+    stroke-dashoffset: 0;
+  }
 }
