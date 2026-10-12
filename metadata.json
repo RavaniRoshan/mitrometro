@@ -1,0 +1,6 @@
+{
+  "name": "MetroResolve — Offline-First Transit Operations Triage",
+  "description": "Every Complaint Heard. Offline-first complaint triage for metro station controllers with multilingual NLP, explainable urgency scoring, and auto-drafted replies.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
