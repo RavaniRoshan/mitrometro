@@ -216,7 +216,7 @@ export function Chip({
       title={title}
       className={cx(
         'inline-flex items-center gap-1.5 rounded-full border px-2.5 py-[3px]',
-        'font-mono text-[0.75rem] font-bold tracking-[0.06em] uppercase',
+        'font-mono text-[0.75rem] font-bold tracking-[0.06em]',
         tones[tone],
         className
       )}

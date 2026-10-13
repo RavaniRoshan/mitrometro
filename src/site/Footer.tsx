@@ -111,7 +111,7 @@ export function Footer() {
               <span className="font-semibold text-ink">PS-07 — “Every
               Complaint Heard”</span> at Metro Hacks, DevFest Gandhinagar ’26.
             </p>
-            <p className="mt-3 flex gap-2 text-[0.82rem] leading-relaxed text-faint">
+            <p className="mt-3 flex gap-2 text-[0.82rem] leading-relaxed text-muted">
               <CircleAlert className="mt-0.5 h-3.5 w-3.5 shrink-0" aria-hidden="true" />
               <span>
                 Not affiliated with, endorsed by, or connected to the Gujarat

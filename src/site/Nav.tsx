@@ -157,13 +157,6 @@ export function Nav() {
                   >
                     Open the console
                   </Action>
-                  <Action
-                    variant="secondary"
-                    onClick={() => jump('workflow')}
-                    className="w-full"
-                  >
-                    Explore the workflow
-                  </Action>
                 </div>
               </nav>
             </div>

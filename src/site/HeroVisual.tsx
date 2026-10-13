@@ -209,7 +209,7 @@ export function HeroVisual() {
                 <FileText className="h-3 w-3" aria-hidden="true" />
                 Draft reply · editable
               </Plate>
-              <span className="rounded border border-signal-lit/50 px-1.5 py-[2px] font-mono text-[0.75rem] font-bold uppercase tracking-[0.1em] text-signal-lit">
+              <span className="rounded border border-signal-lit/50 px-1.5 py-[2px] font-mono text-[0.75rem] font-bold tracking-[0.1em] text-signal-lit">
                 Draft, not sent
               </span>
             </div>

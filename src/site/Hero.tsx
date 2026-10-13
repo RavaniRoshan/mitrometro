@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
-import { ArrowRight, WifiOff, Unplug, Database } from 'lucide-react';
+import { ArrowDown, WifiOff, Unplug, Database } from 'lucide-react';
 import { Action, Plate } from './ui';
 import { HeroVisual } from './HeroVisual';
 import { goSection, openConsole } from '../hooks/useHashRoute';
@@ -67,11 +67,9 @@ export function Hero() {
               {...enter(0.14)}
               className="mt-6 max-w-xl text-[1.1rem] leading-[1.65] text-muted sm:text-[1.17rem]"
             >
-              MetroResolve is an offline-first triage prototype for metro
-              station teams. It sorts passenger complaints arriving in Gujarati,
-              Hindi, English and Gujlish into five queues, shows every reason
-              behind an urgency score, and drafts a reply the operator can edit
-              — even while the network is down.
+              MetroResolve sorts metro complaints in Gujarati, Hindi, English and
+              Gujlish into five queues, shows why each one is urgent, and drafts an
+              editable reply — even offline.
             </motion.p>
 
             <motion.p
@@ -79,6 +77,7 @@ export function Hero() {
               lang="gu"
               className="mt-4 border-l-2 border-signal/40 pl-3 text-[1rem] leading-relaxed text-muted"
             >
+              <span className="mb-1 block text-[0.7rem] font-bold uppercase tracking-wider text-faint">ગુજરાતી</span>
               દરેક ફરિયાદને એક સ્પષ્ટ આગળનું પગલું મળવું જોઈએ.
             </motion.p>
 
@@ -87,13 +86,16 @@ export function Hero() {
               {...enter(0.26)}
               className="mt-9 flex flex-wrap items-center gap-3"
             >
-              <Action variant="primary" onClick={() => goSection('workflow')}>
-                Explore the workflow
-                <ArrowRight className="h-4 w-4" aria-hidden="true" />
-              </Action>
-              <Action variant="secondary" onClick={openConsole}>
+              <Action variant="primary" onClick={openConsole}>
                 Open the console
               </Action>
+              <button
+                onClick={() => goSection('workflow')}
+                className="inline-flex items-center gap-1.5 font-semibold text-muted transition-colors hover:text-signal"
+              >
+                Explore the workflow
+                <ArrowDown className="h-4 w-4" aria-hidden="true" />
+              </button>
             </motion.div>
 
             {/* Honesty strip — where Tines shows its customer logo row */}
@@ -104,7 +106,7 @@ export function Hero() {
               {HONESTY.map(({ icon: Icon, text }) => (
                 <li
                   key={text}
-                  className="flex items-center gap-1.5 text-[0.86rem] font-medium text-muted"
+                  className="flex items-center gap-1.5 text-[0.86rem] font-medium text-ink/80"
                 >
                   <Icon className="h-4 w-4 text-teal" aria-hidden="true" />
                   {text}

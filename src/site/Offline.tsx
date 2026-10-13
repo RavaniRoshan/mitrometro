@@ -104,12 +104,12 @@ export function Offline() {
                   </div>
                   <span className="ml-auto">
                     {impl ? (
-                      <span className="flex items-center gap-1 rounded-md border border-teal/30 bg-teal-soft px-2 py-1 font-mono text-[0.75rem] font-bold uppercase tracking-[0.08em] text-teal">
+                      <span className="flex items-center gap-1 rounded-md border border-teal/30 bg-teal-soft px-2 py-1 font-mono text-[0.75rem] font-bold tracking-[0.08em] text-teal">
                         <Check className="h-3 w-3" aria-hidden="true" />
                         {status}
                       </span>
                     ) : (
-                      <span className="flex items-center gap-1 rounded-md border border-line-2 bg-paper px-2 py-1 font-mono text-[0.75rem] font-bold uppercase tracking-[0.08em] text-faint">
+                      <span className="flex items-center gap-1 rounded-md border border-line-2 bg-paper px-2 py-1 font-mono text-[0.75rem] font-bold tracking-[0.08em] text-faint">
                         <X className="h-3 w-3" aria-hidden="true" />
                         {status}
                       </span>
