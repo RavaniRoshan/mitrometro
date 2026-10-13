@@ -278,7 +278,7 @@ export function TriageConsole() {
 
             <button
               onClick={() => exportCases(cases)}
-              className="inline-flex items-center gap-1.5 rounded-lg border border-line-2 bg-card px-3 py-2 text-[0.75rem] font-bold uppercase tracking-[0.06em] text-ink transition-colors hover:border-ink/50"
+              className="inline-flex items-center gap-1.5 rounded-lg border border-line-2 bg-card px-3 py-2 text-[0.75rem] font-bold tracking-[0.06em] text-ink transition-colors hover:border-ink/50"
               title="Download all cases as JSON"
             >
               <Download className="h-3.5 w-3.5" aria-hidden="true" />
@@ -287,7 +287,7 @@ export function TriageConsole() {
 
             <button
               onClick={resetDemo}
-              className="inline-flex items-center gap-1.5 rounded-lg border border-line-2 bg-card px-3 py-2 text-[0.75rem] font-bold uppercase tracking-[0.06em] text-ink transition-colors hover:border-ink/50"
+              className="inline-flex items-center gap-1.5 rounded-lg border border-line-2 bg-card px-3 py-2 text-[0.75rem] font-bold tracking-[0.06em] text-ink transition-colors hover:border-ink/50"
               title="Clear local storage and restore the synthetic batch"
             >
               <RotateCcw className="h-3.5 w-3.5" aria-hidden="true" />
@@ -296,7 +296,7 @@ export function TriageConsole() {
 
             <a
               href="#/"
-              className="inline-flex items-center gap-1.5 rounded-lg border border-ink bg-ink px-3 py-2 text-[0.75rem] font-bold uppercase tracking-[0.06em] text-on-ink transition-colors hover:bg-ink-2"
+              className="inline-flex items-center gap-1.5 rounded-lg border border-ink bg-ink px-3 py-2 text-[0.75rem] font-bold tracking-[0.06em] text-on-ink transition-colors hover:bg-ink-2"
             >
               <ArrowLeft className="h-3.5 w-3.5" aria-hidden="true" />
               Overview
@@ -360,7 +360,7 @@ export function TriageConsole() {
             </select>
             <button
               type="submit"
-              className="inline-flex items-center justify-center gap-1.5 rounded-lg border border-signal-deep bg-signal-deep px-4 py-2.5 text-[0.78rem] font-bold uppercase tracking-[0.08em] text-white transition-colors hover:bg-signal"
+              className="inline-flex items-center justify-center gap-1.5 rounded-lg border border-signal-deep bg-signal-deep px-4 py-2.5 text-[0.78rem] font-bold tracking-[0.08em] text-white transition-colors hover:bg-signal"
             >
               <Plus className="h-4 w-4" aria-hidden="true" />
               Triage
@@ -552,7 +552,7 @@ export function TriageConsole() {
                               {c.urgency?.reasons.length ?? 0} rules fired
                             </span>
                             {c.isDemo && (
-                              <span className="font-mono text-[0.75rem] uppercase tracking-wider text-faint">
+                              <span className="font-mono text-[0.75rem] tracking-wider text-faint">
                                 demo
                               </span>
                             )}
@@ -731,7 +731,7 @@ export function TriageConsole() {
                         <PenLine className="h-3.5 w-3.5 text-signal-lit" aria-hidden="true" />
                         <Plate className="text-on-ink-muted">Draft reply</Plate>
                       </div>
-                      <span className="rounded border border-signal-lit/50 px-1.5 py-[2px] font-mono text-[0.75rem] font-bold uppercase tracking-[0.1em] text-signal-lit">
+                      <span className="rounded border border-signal-lit/50 px-1.5 py-[2px] font-mono text-[0.75rem] font-bold tracking-[0.1em] text-signal-lit">
                         Draft, not sent
                       </span>
                     </div>
@@ -754,7 +754,7 @@ export function TriageConsole() {
                       </span>
                       <button
                         onClick={saveDraft}
-                        className="inline-flex items-center gap-1.5 rounded-lg bg-signal-deep px-3 py-1.5 text-[0.75rem] font-bold uppercase tracking-[0.08em] text-white transition-colors hover:bg-signal"
+                        className="inline-flex items-center gap-1.5 rounded-lg bg-signal-deep px-3 py-1.5 text-[0.75rem] font-bold tracking-[0.08em] text-white transition-colors hover:bg-signal"
                       >
                         <Save className="h-3.5 w-3.5" aria-hidden="true" />
                         Save on this device

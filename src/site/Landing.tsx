@@ -21,8 +21,8 @@ export function Landing() {
       <main id="main-content" className="flex-1">
         <Hero />
         <Problem />
-        <Workflow />
         <Demo />
+        <Workflow />
         <Offline />
         <Languages />
         <Prioritization />

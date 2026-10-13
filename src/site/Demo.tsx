@@ -226,7 +226,7 @@ export function Demo() {
               <div className="rounded-lg border border-ink/15 bg-ink p-4">
                 <div className="mb-2 flex items-center justify-between gap-2">
                   <Plate className="text-on-ink-muted">Draft reply</Plate>
-                  <span className="rounded border border-signal-lit/50 px-1.5 py-[2px] font-mono text-[0.75rem] font-bold uppercase tracking-[0.1em] text-signal-lit">
+                  <span className="rounded border border-signal-lit/50 px-1.5 py-[2px] font-mono text-[0.75rem] font-bold tracking-[0.1em] text-signal-lit">
                     Draft, not sent
                   </span>
                 </div>
@@ -252,7 +252,7 @@ export function Demo() {
           <button
             type="button"
             onClick={openConsole}
-            className="inline-flex items-center gap-2 rounded-lg border border-ink bg-ink px-5 py-3 text-[0.82rem] font-bold uppercase tracking-[0.08em] text-on-ink transition-colors hover:bg-ink-2"
+            className="inline-flex items-center gap-2 rounded-lg border border-ink bg-ink px-5 py-3 text-[0.82rem] font-bold tracking-[0.08em] text-on-ink transition-colors hover:bg-ink-2"
           >
             Open the console
             <ArrowUpRight className="h-4 w-4" aria-hidden="true" />

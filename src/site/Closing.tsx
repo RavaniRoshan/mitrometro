@@ -25,7 +25,7 @@ export function Closing() {
 
         {/* Oversized display, purple on cream — the Tines closer */}
         <h2 className="mx-auto mt-6 max-w-4xl text-balance display text-signal">
-          Every complaint deserves a clear next step.
+          Nine rules. One file. Nothing leaves the device.
         </h2>
 
         <div className="mx-auto mt-7 flex max-w-2xl flex-col items-center gap-1.5">
@@ -52,7 +52,7 @@ export function Closing() {
           </Action>
         </div>
 
-        <p className="mt-9 font-mono text-[0.8rem] uppercase tracking-[0.08em] text-faint">
+        <p className="mt-9 font-mono text-[0.8rem] uppercase tracking-[0.08em] text-muted">
           Runs in your browser. Nothing to sign up for. Source on GitHub.
         </p>
       </div>
